@@ -1,12 +1,14 @@
-{% if latest_question_list %}
-	<ul>
-		{% for question in latest_question_list %}
-			<li>
-				<!--url set to be dynamic-->
-				<h1><a href="{% url 'polls:details' question.id %}">{{ question.question_text }}</a></h1>
-			</li>
-		{% endfor %}
-	</ul>
-{% else %}
-	<p>No polls are available.</p>
-{% endif %}
+<center>
+	{% if latest_question_list %}
+		<ul style="list-style-type:none;">
+			{% for question in latest_question_list %}
+				<li>
+					<!--url set to be dynamic-->
+					<h1><a href="{% url 'polls:details' question.id %}">{{ question.question_text }}</a></h1>
+				</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>No polls are available.</p>
+	{% endif %}
+</center>
